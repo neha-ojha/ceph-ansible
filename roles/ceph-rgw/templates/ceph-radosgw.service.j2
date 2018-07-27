@@ -61,6 +61,8 @@ ExecStart=/usr/bin/docker run --rm --net=host \
   -e RGW_CIVETWEB_IP=[{{ hostvars[inventory_hostname][interface][ip_version][0]['address'] }}] \
     {% endif %}
 {% endif %}
+  -e RGW_FRONTEND_TYPE={{ radosgw_fronted_type }} \
+  {{ docker_env_args }} \
   -v /etc/localtime:/etc/localtime:ro \
   -e CEPH_DAEMON=RGW \
   -e CLUSTER={{ cluster }} \

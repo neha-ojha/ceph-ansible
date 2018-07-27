@@ -1,7 +1,7 @@
 ---
-- name: set_fact docker_env_args '-e RGW_FRONTENDS={{ radosgw_civetweb_options }}'
+- name: set_fact docker_env_args '-e RGW_FRONTED_OPTIONS={{ radosgw_fronted_options }}'
   set_fact:
-    docker_env_args: -e RGW_FRONTENDS={{ radosgw_civetweb_options }}
+    docker_env_args: -e RGW_FRONTED_OPTIONS={{ radosgw_fronted_options }}
 
 - name: set_fact docker_env_args '-e RGW_ZONEGROUP={{ rgw_zonegroup }}'
   set_fact:
